@@ -3,8 +3,9 @@ package com.example.library.mapper;
 import com.example.library.domain.Reader;
 import com.example.library.domain.dto.ReaderDto;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class ReaderMapper {
 
     public Reader mapToReader(final ReaderDto readerDto) {

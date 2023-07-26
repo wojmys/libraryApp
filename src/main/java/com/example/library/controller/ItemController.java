@@ -2,20 +2,17 @@ package com.example.library.controller;
 
 import com.example.library.domain.dto.ItemDto;
 import com.example.library.service.ItemDbService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 
     @RestController
     @RequestMapping("v1/library")
+    @RequiredArgsConstructor
     public class ItemController {
 
         private final ItemDbService itemDbService;
 
-        @Autowired
-        public ItemController(ItemDbService itemDbService) {
-            this.itemDbService = itemDbService;
-        }
 
         @PostMapping(value = "item")
         public ItemDto createItem(@RequestBody ItemDto itemDto) {

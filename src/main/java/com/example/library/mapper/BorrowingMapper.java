@@ -2,9 +2,9 @@ package com.example.library.mapper;
 
 import com.example.library.domain.Borrowing;
 import com.example.library.domain.dto.BorrowingDto;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class BorrowingMapper {
 
     public BorrowingDto mapToBorrowingDto(final Borrowing borrowing) {

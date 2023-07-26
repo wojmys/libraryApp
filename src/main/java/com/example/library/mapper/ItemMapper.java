@@ -1,10 +1,11 @@
 package com.example.library.mapper;
 
+
 import com.example.library.domain.Item;
 import com.example.library.domain.dto.ItemDto;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class ItemMapper {
 
     public ItemDto mapToItemDto(final Item item) {

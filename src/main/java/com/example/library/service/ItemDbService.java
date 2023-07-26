@@ -6,9 +6,10 @@ import com.example.library.domain.Status;
 import com.example.library.domain.dto.ItemDto;
 import com.example.library.mapper.ItemMapper;
 import com.example.library.repository.ItemRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+@RequiredArgsConstructor
 @Service
 public class ItemDbService {
 
@@ -16,12 +17,6 @@ public class ItemDbService {
     private final ItemMapper itemMapper;
     private final BookDbService bookDbService;
 
-    @Autowired
-    public ItemDbService(ItemRepository itemRepository, ItemMapper itemMapper, BookDbService bookDbService) {
-        this.itemRepository = itemRepository;
-        this.itemMapper = itemMapper;
-        this.bookDbService = bookDbService;
-    }
 
     public ItemDto saveItem(final ItemDto itemDto) {
         Book book = bookDbService.getBookById(itemDto.getBookId());

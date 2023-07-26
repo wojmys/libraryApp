@@ -11,14 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("v1/library")
+@RequiredArgsConstructor
 public class BookController {
 
     private final BookDbService bookDbService;
-
-    @Autowired
-    public BookController(BookDbService bookDbService) {
-        this.bookDbService = bookDbService;
-    }
 
     @PostMapping(value = "book")
     public BookDto createBook(@RequestBody BookDto bookDto) {

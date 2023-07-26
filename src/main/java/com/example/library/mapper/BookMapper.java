@@ -2,9 +2,10 @@ package com.example.library.mapper;
 
 import com.example.library.domain.Book;
 import com.example.library.domain.dto.BookDto;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+
+@Service
 public class BookMapper {
 
     public Book mapToBook(final BookDto bookDto) {

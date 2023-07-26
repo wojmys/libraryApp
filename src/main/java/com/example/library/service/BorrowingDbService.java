@@ -7,12 +7,14 @@ import com.example.library.domain.Status;
 import com.example.library.domain.dto.BorrowingDto;
 import com.example.library.mapper.BorrowingMapper;
 import com.example.library.repository.BorrowingRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
 
 @Service
+@RequiredArgsConstructor
 public class BorrowingDbService {
 
     private final BorrowingMapper borrowingMapper;
@@ -20,14 +22,6 @@ public class BorrowingDbService {
     private final ReaderDbService readerDbService;
     private final ItemDbService itemDbService;
 
-    @Autowired
-    public BorrowingDbService(BorrowingMapper borrowingMapper, BorrowingRepository borrowingRepository,
-                              ReaderDbService readerDbService, ItemDbService itemDbService) {
-        this.borrowingMapper = borrowingMapper;
-        this.borrowingRepository = borrowingRepository;
-        this.readerDbService = readerDbService;
-        this.itemDbService = itemDbService;
-    }
 
     public BorrowingDto saveBorrowing(final BorrowingDto borrowingDto) {
         Reader reader = readerDbService.getReaderById(borrowingDto.getReaderId());
